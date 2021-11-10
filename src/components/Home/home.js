@@ -1,8 +1,9 @@
 import React from 'react';
+import classes from './home.module.css';
 
 const Home = () => {
     return (
-        <div>Category page</div>
+        <div className={classes.root}>Trivia App</div>
     );
 };
 
