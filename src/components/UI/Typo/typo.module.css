@@ -1,0 +1,27 @@
+.typo_title {
+    font-size: var(--global-title-size);
+}
+
+.typo_category {
+    font-size: var(--global-category-size);
+}
+
+.typo_p {
+    font-size: var(--global-text-size);
+}
+
+.typo_medium {
+    font-family: var(--global-font-medium);
+}
+
+.typo_bold {
+    font-family: var(--global-font-bold);
+}
+
+.typo_primary {
+    color: var(--global-text-color);
+}
+
+.typo_secondary {
+    color: var(--global-green-color);
+}

@@ -1,3 +1,8 @@
-.root {
-    font-family: var(--global-font-bold);
+.content {
+    margin-top: 146px;
+    margin-bottom: 99px;
+}
+
+.title {
+    margin-bottom: 36px;
 }

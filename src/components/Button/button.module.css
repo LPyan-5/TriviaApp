@@ -1,0 +1,43 @@
+.root {
+    padding: 16px 40px 18px;
+    position: relative;
+}
+
+.primary {
+    width: 100%;
+    max-width: 150px;
+    background: var(--global-green-color);
+    border-radius: 18px;
+    opacity: 1;
+    border: 0px;
+    cursor: pointer;
+    text-align: center;
+    transition: 0.5s;
+}
+
+.disabledButton {
+    background: #F6F7F8;
+    cursor: auto;
+}
+
+.primary:hover:enabled {
+    transition: 0.5s;
+    background: #2D6A4C;
+}
+
+.primary:focus {
+    outline: none;
+}
+
+.button_label {
+    font-family: var(--global-font-bold);
+    font-size: var(--global-text-size);
+    letter-spacing: 0.01px;
+    color: #FFFFFF;
+    opacity: 1;
+    text-align: center;
+}
+
+.disabledButton .button_label {
+    color: var(--global-disable-color);
+}
