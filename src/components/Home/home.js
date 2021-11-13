@@ -6,17 +6,19 @@ import Select from '../Select';
 import { Categories } from '../../store/categories';
 import Button from '../Button';
 import { useHistory } from 'react-router';
+import { useDispatch } from 'react-redux';
+import { actions } from '../../store/actions/quiz';
 
 const Home = () => {
     const history = useHistory();
+    const dispatch = useDispatch();
     const [category, setCategory] = useState(null);
-    const [questions, setQuestions] = useState([]);
 
     const handleFetchQuestions = useCallback(() => {
-        axios.get(`https://opentdb.com/api.php?amount=10&category=${category.value}&difficulty=easy`)
+        axios.get(`https://opentdb.com/api.php?amount=10&category=${category.value}`)
         .then(response => {
-            setQuestions(response.data.results);
-            history.replace("/quiz", { state: { questions }})
+            dispatch(actions.setQuestions(response.data.results));
+            history.replace("/quiz");
         });
     }, [category]);
 
