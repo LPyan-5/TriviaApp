@@ -1,10 +1,11 @@
 import HomePage from "./pages/HomePage";
 import QuizPage from "./pages/QuizPage";
+import ResultPage from "./pages/ResultPage";
 
 const Routes = [
     {
         path: "/result",
-        // component: ResultPage,
+        component: ResultPage,
         exact: true
     },
     {

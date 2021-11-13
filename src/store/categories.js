@@ -1,8 +1,8 @@
 export const Categories = [
-    { 
-        name: "Art", 
-        value: 25
-    }, 
+    {
+        name: "Science: Mathematics",
+        value: 19
+    },
     { 
         name: "History", 
         value: 23 
