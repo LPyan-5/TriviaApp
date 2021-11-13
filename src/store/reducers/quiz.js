@@ -1,5 +1,3 @@
-import { actions } from "../actions/quiz";
-
 const initialState = {
     questions: {},
     score: 0
@@ -16,7 +14,7 @@ export default function rootReducer(state = initialState, action) {
         case "SET_SCORE": {
             return {
                 ...state,
-                score: actions.payload
+                score: action.payload
             }
         }
         default:

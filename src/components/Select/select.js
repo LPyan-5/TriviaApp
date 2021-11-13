@@ -23,7 +23,7 @@ const Select = ({
             </div>
             <div 
                 onClick = {() => setIsOpen(!isOpen)}
-                className={isOpen ? classes.customOptionsOpen : classes.customOptionsHidden}
+                className={`${classes.options} ${isOpen ? classes.open : classes.hidden}`}
             >
                 {items.map((item, index) => (
                     <div className={classes.option} key={index} onClick={() => onChange(item)}>

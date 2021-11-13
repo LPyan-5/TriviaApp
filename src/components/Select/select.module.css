@@ -58,8 +58,8 @@
     color: var(--global-text-color);
 }
 
-.customOptionsOpen {
-    display: block;
+.options {
+    transition: 0.3s;
     overflow: auto;
     max-height: 222px;
     box-sizing: border-box;
@@ -73,10 +73,18 @@
     padding: 10px;
     position: absolute;
     z-index: 1;
+    transition: 0.7s;
 }
 
-.customOptionsHidden {
-    display: none;
+.open {
+    visibility: visible;
+    opacity: 1;
+}
+
+.hidden {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.4s, opacity 0.4s linear;  
 }
 
 .closed {
