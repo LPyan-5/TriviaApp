@@ -1,4 +1,5 @@
 import HomePage from "./pages/HomePage";
+import QuizPage from "./pages/QuizPage";
 
 const Routes = [
     {
@@ -8,7 +9,7 @@ const Routes = [
     },
     {
         path: "/quiz",
-        // component: QuizPage,
+        component: QuizPage,
         exact: true
     },
     {
