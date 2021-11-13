@@ -1,11 +1,14 @@
 :root {
     --global-background-color: #E5E5E5;
     --global-green-color: #3A7859;
-    --global-title-color: #354153;
+    --global-text-color: #354153;
     --global-green-border-color: #95B6A9;
-    --global-border-color: #E7EBF1;
-    --global-text-color: #9EA0A4;
+    --global-border-color: #c8ddfd;
+    --global-light-color: #9EA0A4;
     --global-disable-color: #C4C4C4;
     --global-font-medium: "Barlow";
     --global-font-bold: "Barlow Bold";
+    --global-title-size: 50px;
+    --global-category-size: 30px;
+    --global-text-size: 18px;
 }
