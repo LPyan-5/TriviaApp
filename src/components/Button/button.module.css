@@ -36,8 +36,15 @@
     color: #FFFFFF;
     opacity: 1;
     text-align: center;
+    transition: 0.7s;
 }
 
 .disabledButton .button_label {
     color: var(--global-disable-color);
+}
+
+@media screen and (max-width: 450px) {
+    .button_label {
+        font-size: var(--global-mobile-text-size);
+    }
 }

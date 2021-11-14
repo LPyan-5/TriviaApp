@@ -1,5 +1,6 @@
 .root {
     margin-top: 87px;
+    transition: 0.7s;
 }
 
 .question {
@@ -8,6 +9,7 @@
     line-height: 150%;
     margin: 0 auto;
     margin-bottom: 72px;
+    transition: 0.7s;
 }
 
 .answers {
@@ -15,6 +17,7 @@
     grid-gap: 24px;
     grid-template-columns: repeat(auto-fit, minmax(0, 290px));
     justify-content: center;
+    transition: 0.7s;
 }
 
 .answerBox {
@@ -25,7 +28,7 @@
     box-sizing: border-box;
     border-radius: 18px;
     cursor: pointer;
-    transition: 0.5s;
+    transition: 0.7s;
 }
 
 .answerBox:hover {
@@ -37,4 +40,41 @@
 .answerBox:hover .answer {
     transition: 0.5s;
     color: #2D6A4C;
+}
+
+@media screen and (max-width: 1700px) {
+    .answers {
+        grid-template-columns: repeat(auto-fit, minmax(0, 260px));
+    }
+}
+
+@media screen and (max-width: 1500px) {
+    .answers {
+        grid-template-columns: repeat(auto-fit, minmax(0, 360px));
+    }
+
+    .answerBox {
+        max-width: 360px;
+        transition: 0.7s;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .root {
+        margin-top: 50px;
+    }
+
+    .answers {
+        grid-template-columns: repeat(auto-fit, minmax(0, 288px));
+    }
+
+    .answerBox {
+        max-width: 288px;
+        transition: 0.7s;
+        padding: 12px;
+    }
+
+    .question {
+        margin-bottom: 50px;
+    }
 }

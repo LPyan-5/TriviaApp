@@ -39,6 +39,7 @@ const Home = () => {
                 label="Start"
                 onClick={handleFetchQuestions}
                 disabled={!category}
+                classes={{primary: classes.startButton}}
             />
         </div>
     );

@@ -7,7 +7,6 @@
 
 body {
     margin: 0;
-    padding: 134px 0 433px;
     font-family: var(--global-font-medium) !important;
     background-color: var(--global-background-color);
 }
