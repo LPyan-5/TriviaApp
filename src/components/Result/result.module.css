@@ -1,9 +1,24 @@
 .score {
     margin: 146px 0 72px;
+    transition: 0.7s;
 }
 
 .backBtn {
     composes: primary from '../Button/button.module.css';
     max-width: 149px;
     padding: 16px 20px 18px;
+    transition: 0.7s;
+}
+
+@media screen and (max-width: 768px) {
+    .score {
+        margin: 100px 0 60px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .backBtn {
+        max-width: 130px;
+        padding: 15px;
+    }
 }

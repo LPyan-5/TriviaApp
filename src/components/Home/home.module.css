@@ -1,8 +1,30 @@
 .content {
-    margin-top: 146px;
-    margin-bottom: 99px;
+    margin: 146px 0 99px;
+    transition: 0.7s;
 }
 
 .title {
     margin-bottom: 36px;
+}
+
+@media screen and (max-width: 768px) {
+    .root {
+        padding: 0 16px;
+    }
+
+    .content {
+        margin: 100px 0 60px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .content {
+        margin: 60px 0 40px;
+    }
+
+    .startButton {
+        composes: primary from '../Button/button.module.css';
+        max-width: 130px;
+        padding: 10px 30px;
+    }
 }

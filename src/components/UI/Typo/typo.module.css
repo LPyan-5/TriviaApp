@@ -25,3 +25,31 @@
 .typo_secondary {
     color: var(--global-green-color);
 }
+
+@media screen and (max-width: 768px) {
+    .typo_title {
+        font-size: var(--global-mobile-title-size);
+    }
+    
+    .typo_category {
+        font-size: var(--global-mobile-category-size);
+    }
+    
+    .typo_p {
+        font-size: var(--global-mobile-text-size);
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .typo_title {
+        font-size: 30px;
+    }
+    
+    .typo_category {
+        font-size: 18px;
+    }
+    
+    .typo_p {
+        font-size: 14px;
+    }
+}
