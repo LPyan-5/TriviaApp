@@ -18,7 +18,7 @@ const Select = ({
             <div className={`${classes.select} ${isOpen ? classes.focused : ""}`} onClick = {() => setIsOpen(!isOpen)}>
                 <div className={classes.main}>
                     <div className={`${classes.title} ${value ? classes.selected : ""}`}>{value ? value : label}</div>
-                    <img src="/arrow.png" className={isOpen ? classes.opened : classes.closed} alt=""/>
+                    <img src="images/arrow.png" className={isOpen ? classes.opened : classes.closed} alt=""/>
                 </div>
             </div>
             <div 

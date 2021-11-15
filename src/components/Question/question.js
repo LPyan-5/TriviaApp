@@ -6,20 +6,35 @@ import { useDispatch } from 'react-redux';
 import { actions } from '../../store/actions/quiz';
 
 const Question = (props) => {
-    const { questions, answers, score, setScore, setCurrent, current, correct } = props;
+    const { questions, answers, score, current, correct } = props;
     const history = useHistory();
     const dispatch = useDispatch();
 
     const handleCheck = (answer) => {
+        if(answer === correct) {
+            dispatch(actions.setScore(score + 1));
+        }
+        selectedToStorage(answer, correct);
         if(current === questions.length) {
-            dispatch(actions.setScore(score));
             history.replace("/result");
             return
         }
-        if(answer === correct) {
-            setScore(score + 1);
+        else {
+            dispatch(actions.setCurrent(current + 1));
         }
-        setCurrent(current + 1);
+    }
+
+    const selectedToStorage = (answer) => {
+        let data = JSON.parse(localStorage.getItem("quiz"));
+        const lastItem = data.pop();
+        let item = { 
+            ...lastItem,
+            selected: [...lastItem.selected, { answer, value: answer === correct }],
+            score: answer === correct ? score + 1 : score, 
+            current: current + 1
+        }
+        data.push(item);
+        localStorage.setItem("quiz", JSON.stringify(data));
     }
 
     return (

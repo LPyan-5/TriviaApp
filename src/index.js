@@ -5,10 +5,17 @@ import App from './components/App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
-import reducer from './store/reducers/quiz';
+import { createStore, applyMiddleware } from 'redux';
+import reducer, { initialState } from './store/reducers/quiz';
+import { composeWithDevTools } from 'redux-devtools-extension';
+import thunk from 'redux-thunk';
+import axios from 'axios';
 
-const store = createStore(reducer, {});
+const axiosInstance = axios.create({
+    baseURL: ''
+});
+
+const store = createStore(reducer, initialState, composeWithDevTools(applyMiddleware(thunk.withExtraArgument(axiosInstance))));
 
 ReactDOM.render(
 	<React.StrictMode>
