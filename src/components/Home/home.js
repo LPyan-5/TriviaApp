@@ -18,6 +18,21 @@ const Home = () => {
         axios.get(`https://opentdb.com/api.php?amount=10&category=${category.value}`)
         .then(response => {
             dispatch(actions.setQuestions(response.data.results));
+            const data = {
+                category,
+                questions: response.data.results,
+                selected: [],
+                score: 0,
+                current: 1
+            }
+            const quizData = JSON.parse(localStorage.getItem("quiz"));
+            if(quizData && quizData.length) {
+                const updatedData = [...quizData, data];
+                localStorage.setItem("quiz", JSON.stringify(updatedData))
+            }
+            else {
+                localStorage.setItem("quiz", JSON.stringify([data]));
+            }
             history.replace("/quiz");
         });
     }, [category]);

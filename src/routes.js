@@ -1,8 +1,14 @@
 import HomePage from "./pages/HomePage";
 import QuizPage from "./pages/QuizPage";
 import ResultPage from "./pages/ResultPage";
+import Scores from "./pages/Scores";
 
 const Routes = [
+    {
+        path: "/scores",
+        component: Scores,
+        exact: true
+    },
     {
         path: "/result",
         component: ResultPage,
@@ -16,11 +22,6 @@ const Routes = [
     {
         path: "/",
         component: HomePage,
-        exact: true
-    },
-    {
-        path: "*",
-        // component: NotFound,
         exact: true
     }
 ];

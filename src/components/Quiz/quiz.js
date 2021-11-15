@@ -7,9 +7,9 @@ import Difficulty from '../Difficulty';
 
 const Quiz = () => {
     const questions = useSelector(state => state.questions);
-    const [current, setCurrent] = useState(1);
+    const current = useSelector(state => state.current);
+    const score = useSelector(state => state.score);
     const [answers, setAnswers] = useState([]);
-    const [score, setScore] = useState(0);
 
     useEffect(() => {
         if(questions && questions.length) {
@@ -26,7 +26,7 @@ const Quiz = () => {
         return options.sort(() => Math.random() - 0.5);
     }
 
-    if(!questions || !questions.length) {
+    if(!questions || !questions.length || !current) {
         return null;
     }
 
@@ -38,8 +38,6 @@ const Quiz = () => {
                 questions={questions}
                 answers={answers}
                 score={score}
-                setScore={setScore}
-                setCurrent={setCurrent}
                 current={current}
                 correct={questions[current - 1].correct_answer}
                 setAnswers={setAnswers}
