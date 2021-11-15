@@ -12,9 +12,10 @@
 }
 
 .value {
-    display: flex;
+    display: grid;
+    grid-template-columns: 0.8fr 0.5fr;
+    grid-column-gap: 7px;
     align-items: center;
-    justify-content: space-between;
 }
 
 .value p {
