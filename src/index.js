@@ -1,31 +1,34 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import './index.css';
 import App from './components/App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
+import { createStore, applyMiddleware, compose } from 'redux';
 import reducer, { initialState } from './store/reducers/quiz';
-import { composeWithDevTools } from 'redux-devtools-extension';
-import thunk from 'redux-thunk';
-import axios from 'axios';
+import { thunk } from 'redux-thunk';
+import { createRoot } from 'react-dom/client';
 
-const axiosInstance = axios.create({
-    baseURL: ''
-});
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-const store = createStore(reducer, initialState, composeWithDevTools(applyMiddleware(thunk.withExtraArgument(axiosInstance))));
+const store = createStore(
+    reducer,
+    initialState,
+    composeEnhancers(applyMiddleware(thunk)),
+);
 
-ReactDOM.render(
-	<React.StrictMode>
-		<Provider store={store}>
-			<BrowserRouter>
-				<App />
-			</BrowserRouter>
-		</Provider>
-	</React.StrictMode>,
-  document.getElementById('root')
+const rootElement = document.getElementById('root');
+
+const root = createRoot(rootElement);
+
+root.render(
+    <React.StrictMode>
+        <Provider store={store}>
+            <BrowserRouter>
+                <App />
+            </BrowserRouter>
+        </Provider>
+    </React.StrictMode>,
 );
 
 // If you want to start measuring performance in your app, pass a function

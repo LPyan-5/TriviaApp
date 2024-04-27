@@ -2,9 +2,7 @@ import React from 'react';
 import Quiz from '../../components/Quiz';
 
 const QuizPage = () => {
-    return (
-        <Quiz/>
-    );
+    return <Quiz />;
 };
 
 export default QuizPage;
