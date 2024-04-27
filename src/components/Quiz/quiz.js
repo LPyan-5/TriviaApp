@@ -6,34 +6,36 @@ import Question from '../Question';
 import Difficulty from '../Difficulty';
 
 const Quiz = () => {
-    const questions = useSelector(state => state.questions);
-    const current = useSelector(state => state.current);
-    const score = useSelector(state => state.score);
+    const questions = useSelector((state) => state.questions);
+    const current = useSelector((state) => state.current);
+    const score = useSelector((state) => state.score);
     const [answers, setAnswers] = useState([]);
 
     useEffect(() => {
-        if(questions && questions.length) {
+        if (questions && questions.length) {
             setAnswers(
-                handleSort(
-                    [questions[current - 1].correct_answer, ...questions[current - 1].incorrect_answers]
-                )
-            )
+                handleSort([
+                    questions[current - 1].correct_answer,
+                    ...questions[current - 1].incorrect_answers,
+                ]),
+            );
         }
-
     }, [questions, current]);
 
-    const handleSort = options => {
+    const handleSort = (options) => {
         return options.sort(() => Math.random() - 0.5);
-    }
+    };
 
-    if(!questions || !questions.length || !current) {
+    if (!questions || !questions.length || !current) {
         return null;
     }
 
     return (
         <div className={classes.root}>
-            <Typo variant="title" color="secondary" font="bold">Question {current > 9 ? current : "0" + current}</Typo>
-            <Difficulty difficulty={questions[current - 1].difficulty}/>
+            <Typo variant="title" color="secondary" font="bold">
+                Question {current > 9 ? current : '0' + current}
+            </Typo>
+            <Difficulty difficulty={questions[current - 1].difficulty} />
             <Question
                 questions={questions}
                 answers={answers}

@@ -11,8 +11,7 @@ const Button = (props) => {
             type={type}
             className={`${classes.root}
                         ${classes.primary}
-                        ${disabled ? classes.disabledButton : ""}`
-                    }
+                        ${disabled ? classes.disabledButton : ''}`}
             onClick={onClick}
             disabled={disabled}
         >

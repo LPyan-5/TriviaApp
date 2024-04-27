@@ -1,18 +1,18 @@
 export const Categories = [
     {
-        name: "Science: Mathematics",
-        value: 19
-    },
-    { 
-        name: "History", 
-        value: 23 
+        name: 'Science: Mathematics',
+        value: 19,
     },
     {
-        name: "Animals",
-        value: 27
+        name: 'History',
+        value: 23,
     },
     {
-        name: "Sports",
-        value: 21
-    }
+        name: 'Animals',
+        value: 27,
+    },
+    {
+        name: 'Sports',
+        value: 21,
+    },
 ];

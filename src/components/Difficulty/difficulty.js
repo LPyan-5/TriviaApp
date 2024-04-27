@@ -2,8 +2,7 @@ import React from 'react';
 import classes from './difficulty.module.css';
 
 const Difficulty = ({ difficulty }) => {
-
-    if(!difficulty) {
+    if (!difficulty) {
         return null;
     }
 

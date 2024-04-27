@@ -1,44 +1,44 @@
 export const initialState = {
     questions: [],
     score: 0,
-    current: 1
+    current: 1,
 };
 
 export default function rootReducer(state = initialState, action) {
-    switch(action.type) {
-        case "SET_QUESTIONS": {
+    switch (action.type) {
+        case 'SET_QUESTIONS': {
             return {
                 ...state,
-                questions: action.payload
-            }
+                questions: action.payload,
+            };
         }
-        case "SET_SCORE": {
+        case 'SET_SCORE': {
             return {
                 ...state,
-                score: action.payload
-            }
+                score: action.payload,
+            };
         }
-        case "SET_CURRENT": {
+        case 'SET_CURRENT': {
             return {
                 ...state,
-                current: action.payload
-            }
+                current: action.payload,
+            };
         }
-        case "CLEAR": {
+        case 'CLEAR': {
             return {
                 questions: [],
                 score: 0,
-                current: 1
-            }
+                current: 1,
+            };
         }
-        case "AUTO_SET": {
+        case 'AUTO_SET': {
             return {
                 questions: action.payload.questions,
                 score: action.payload.score,
-                current: action.payload.current
-            }
+                current: action.payload.current,
+            };
         }
         default:
-            return state
+            return state;
     }
-};
+}

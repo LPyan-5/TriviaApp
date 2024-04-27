@@ -17,7 +17,7 @@
 
 .disabledButton {
     background: #F6F7F8;
-    cursor: auto;
+    cursor: not-allowed;
 }
 
 .primary:hover:enabled {
